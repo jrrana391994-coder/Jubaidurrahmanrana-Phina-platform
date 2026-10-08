@@ -26,6 +26,18 @@ assert(noUncertainty.status==="INCONCLUSIVE","missing uncertainty must fail clos
 const noCorroboration=validateE09Package({...base,independentCorroboration:{}});
 assert(noCorroboration.status==="INCONCLUSIVE","missing corroboration must fail closed");
 
+const noSafety=validateE09Package({...base,humanSafetyReview:{}});
+assert(noSafety.status==="INCONCLUSIVE","missing safety review must fail closed");
+
+const invalidProvenance=validateE09Package({...base,provenance:[{class:"fabricated"}]});
+assert(invalidProvenance.status==="INCONCLUSIVE","invalid provenance class must fail closed");
+
+const nonRepeatable=validateE09Package({...base,repeatabilityReplication:{}});
+assert(nonRepeatable.status==="INCONCLUSIVE","missing repeatability evidence must fail closed");
+
+const nonReproducibleAnalysis=validateE09Package({...base,analysis:{}});
+assert(nonReproducibleAnalysis.status==="INCONCLUSIVE","missing reproducible analysis must fail closed");
+
 const badMeasurement=validateE09Package({...base,rawMeasurements:[{value:Number.NaN,unit:"unit"}]});
 assert(badMeasurement.status==="INCONCLUSIVE","invalid measurement must fail closed");
 
