@@ -1,0 +1,18 @@
+# E-09 L2 State Machine
+
+LOCKED_RESEARCH
+  -> EXPERIMENT_DESIGN_LOCKED
+  -> SAFETY_REVIEW_REQUIRED
+  -> READY_FOR_EXPERIMENT
+  -> EXPERIMENT_PERFORMED
+  -> RAW_EVIDENCE_CAPTURED
+  -> INTEGRITY_VALIDATED
+  -> REPLICATION_VALIDATED
+  -> INDEPENDENT_CORROBORATION
+  -> TECHNICAL_REVIEW
+  -> E09_L2_VALIDATION
+  -> PASS -> E10_UNLOCK
+  -> INCONCLUSIVE -> LOCK_AND_RESEARCH
+
+PASS is derived from authoritative evidence validation, never user-selected.
+E10 unlock is derived from authoritative E09 PASS, never separately granted.
