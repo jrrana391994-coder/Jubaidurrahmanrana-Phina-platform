@@ -1,0 +1,15 @@
+{
+  "contractVersion": "E09-L2-AUTOMATION-1",
+  "ecosystem": "PHINA AUTOMATION TECHNOLOGY DEVELOPMENT ECOSYSTEM",
+  "gate": "E-09",
+  "failureDecision": "LOCK_AND_RESEARCH",
+  "passRequirements": ["realMeasurements","rawArtifacts","evidenceHashVerified","acceptanceCriteriaSatisfied","replication","independentCorroboration","humanSafetyReview","humanTechnicalReview","authoritativePersistence","notSuperseded"],
+  "e10UnlockRule": {
+    "operator": "AND",
+    "conditions": ["authoritativeE09.status == PASS","authoritativeE09.evidenceLevel == L2","authoritativeE09.decision == UNLOCK_NEXT_GATE","authoritativeE09.evidenceHashVerified == true","authoritativeE09.notSuperseded == true"],
+    "clientOverrideAllowed": false,
+    "chatOverrideAllowed": false,
+    "syntheticFixtureOverrideAllowed": false,
+    "adminBypassAllowed": false
+  }
+}
